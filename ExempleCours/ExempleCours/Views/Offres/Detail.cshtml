@@ -1,0 +1,24 @@
+﻿@model Offre
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Detail</title>
+</head>
+<body>
+    <div class="card" style="width: 18rem;">
+        <img src="@(Model.Url)" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@(Model.Titre)</h5>
+            <p class="card-text">Prix : @(Model.Prix) €</p>
+            <p class="card-text">Description : @(Model.Description)</p>
+        </div>
+    </div>
+</body>
+</html>

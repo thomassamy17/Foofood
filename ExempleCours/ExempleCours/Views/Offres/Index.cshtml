@@ -1,0 +1,18 @@
+﻿@model System.Collections.Generic.List<ExempleCours.Models.Offre>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>title</h2>
+@foreach (var item in Model)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="@item.Url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titre)</h5>
+            @Html.ActionLink("Detail", "Detail", new { id=item.Id })
+        </div>
+    </div>
+}
