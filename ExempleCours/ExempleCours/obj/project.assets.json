@@ -12583,11 +12583,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Program .NET\\Foofood-master\\ExempleCours\\ExempleCours\\ExempleCours.csproj",
+      "projectUniqueName": "D:\\Program .NET\\Foofood-master\\Foofood\\ExempleCours\\ExempleCours\\ExempleCours.csproj",
       "projectName": "ExempleCours",
-      "projectPath": "D:\\Program .NET\\Foofood-master\\ExempleCours\\ExempleCours\\ExempleCours.csproj",
+      "projectPath": "D:\\Program .NET\\Foofood-master\\Foofood\\ExempleCours\\ExempleCours\\ExempleCours.csproj",
       "packagesPath": "C:\\Users\\huuta\\.nuget\\packages\\",
-      "outputPath": "D:\\Program .NET\\Foofood-master\\ExempleCours\\ExempleCours\\obj\\",
+      "outputPath": "D:\\Program .NET\\Foofood-master\\Foofood\\ExempleCours\\ExempleCours\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
