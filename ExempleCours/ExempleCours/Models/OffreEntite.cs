@@ -8,7 +8,7 @@ namespace ExempleCours.Models
 {
     public class OffreEntite
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         [Required]
         [StringLength(256), MinLength(2)]
         public string Titre{ get;set; }

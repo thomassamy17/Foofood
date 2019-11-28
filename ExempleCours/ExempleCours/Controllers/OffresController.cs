@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using ExempleCours.Models;
@@ -12,24 +13,16 @@ namespace ExempleCours.Controllers
 {
     public class OffresController : Controller
     {
+        private IOffreRepo repo;
+
+        public OffresController(IOffreRepo repo)
+        {
+            this.repo = repo;
+        }
+
         public IActionResult Index()
         {
-            var chaineConnexion = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Program .NET\Foofood-master\ExempleCours\ExempleCours\Data\Data.mdf; Integrated Security = True; Connect Timeout = 30";
-
-            try
-            {
-                using (var connection = new SqlConnection(chaineConnexion))
-                {
-                    var galerie = connection.Query<OffreEntite>("SELECT * FROM Offre");
-
-                    return View(galerie);
-
-                } // Appel du Dispose de connection (ferme la connexion)
-            }
-            catch (SqlException e)
-            {
-                return RedirectToAction("Error", "Home");
-            }
+            return View(repo.All);
         }
 
         public IActionResult Create()
@@ -79,6 +72,12 @@ namespace ExempleCours.Controllers
             {
                 return RedirectToAction("Error", "Home");
             }
+        }
+
+        //DETAIL DU PROF
+        public IActionResult Details(int id)
+        {
+            return View(repo.GetById(id));
         }
     }
 }
