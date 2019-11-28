@@ -1,4 +1,4 @@
-﻿@model Offre
+﻿@model OffreEntite
 
 @{
     ViewBag.Title = "title";
@@ -12,13 +12,13 @@
     <title>Detail</title>
 </head>
 <body>
-    <div class="card" style="width: 18rem;">
-        <img src="@(Model.Url)" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">@(Model.Titre)</h5>
-            <p class="card-text">Prix : @(Model.Prix) €</p>
-            <p class="card-text">Description : @(Model.Description)</p>
-        </div>
+<div class="card" style="width: 18rem;">
+    <img width="150" src="@(Model.Url)" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@(Model.Titre)</h5>
+        <p class="card-text">Prix : @(Model.Prix) €</p>
+        <p class="card-text">Description : @(Model.Description)</p>
     </div>
+</div>
 </body>
 </html>

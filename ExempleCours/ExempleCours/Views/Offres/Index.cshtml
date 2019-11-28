@@ -1,15 +1,15 @@
-﻿@model System.Collections.Generic.List<ExempleCours.Models.Offre>
+﻿@model System.Collections.Generic.IEnumerable<ExempleCours.Models.OffreEntite>
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<h2 class="pb-2">Liste des offres</h2>
 @foreach (var item in Model)
 {
-    <div class="card" style="width: 18rem;">
-        <img src="@item.Url" class="card-img-top" alt="...">
+    <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding-bottom: 2">
+        <img width="170" src="@item.Url" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titre)</h5>
             @Html.ActionLink("Detail", "Detail", new { id=item.Id })
