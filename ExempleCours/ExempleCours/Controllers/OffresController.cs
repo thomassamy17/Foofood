@@ -32,29 +32,36 @@ namespace ExempleCours.Controllers
         [HttpPost]
         public IActionResult Create(OffreEntite nouveau)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    var chaineConnexion = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Program .NET\Foofood-master\ExempleCours\ExempleCours\Data\Data.mdf; Integrated Security = True; Connect Timeout = 30";
+
+            //    try
+            //    {
+            //        using (var connection = new SqlConnection(chaineConnexion))
+            //        {
+            //            connection.Execute("INSERT INTO Offre (Titre,Description,Url,Prix,UserId) VALUES (@Titre,@Description,@Url,@Prix,1)",nouveau);
+
+            //            return RedirectToAction(nameof(Index));
+
+            //        }
+            //    }
+            //    catch (SqlException e)
+            //    {
+            //        return RedirectToAction(e.Message, "Home");
+            //    }
+            //}
+            //return View();
+
             if (ModelState.IsValid)
             {
-                var chaineConnexion = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Program .NET\Foofood-master\ExempleCours\ExempleCours\Data\Data.mdf; Integrated Security = True; Connect Timeout = 30";
-
-                try
-                {
-                    using (var connection = new SqlConnection(chaineConnexion))
-                    {
-                        connection.Execute("INSERT INTO Offre (Titre,Description,Url,Prix,UserId) VALUES (@Titre,@Description,@Url,@Prix,1)",nouveau);
-
-                        return RedirectToAction(nameof(Index));
-
-                    }
-                }
-                catch (SqlException e)
-                {
-                    return RedirectToAction(e.Message, "Home");
-                }
+                repo.Save(nouveau);
+                return RedirectToAction(nameof(Index));
             }
             return View();
         }
 
-        public IActionResult Detail(int id)
+        /*public IActionResult Detail(int id)
         {
             var chaineConnexion = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Program .NET\Foofood-master\ExempleCours\ExempleCours\Data\Data.mdf; Integrated Security = True; Connect Timeout = 30";
 
@@ -72,10 +79,10 @@ namespace ExempleCours.Controllers
             {
                 return RedirectToAction("Error", "Home");
             }
-        }
+        }*/
 
         //DETAIL DU PROF
-        public IActionResult Details(int id)
+        public IActionResult Detail(int id)
         {
             return View(repo.GetById(id));
         }
